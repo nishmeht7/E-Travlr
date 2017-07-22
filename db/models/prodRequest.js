@@ -34,7 +34,3 @@ module.exports = db => db.define('prodRequests', {
     values: ['active', 'pending', 'expired', 'complete'],
   }
 })
-
-module.exports.association = (User, ProdRequest) => {
-  ProdRequest.hasOne(User)
-}
