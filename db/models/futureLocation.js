@@ -1,6 +1,6 @@
 const {STRING, DATEONLY} = require('sequelize')
 
-module.exports = db => ('futureLocations', {
+module.exports = db => db.define('futureLocations', {
   originCity: {
     type: STRING,
     isNull: false,
@@ -18,4 +18,3 @@ module.exports = db => ('futureLocations', {
     isNull: false,
   },
 })
-
