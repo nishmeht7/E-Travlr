@@ -10,6 +10,11 @@ module.exports = db => db.define('prodRequests', {
     notEmpty: true,
     isURL: true,
   },
+  url: {
+    type: TEXT,
+    notEmpty: true, 
+    isURL: true, 
+  },
   price: {
     type: FLOAT,
     notEmpty: true,
