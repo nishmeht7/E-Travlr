@@ -12,12 +12,11 @@ module.exports = require('express').Router()
 			.catch(next))
 	.post('/',
 		(req, res, next) => 
-			console.log('the post req.body', req.body)
 			ProdRequest.Create(req.body)
 			.then(singleRequest => res.status(201).json(singleRequest))
 			.catch(next))
 	.delete('/:id', 
 		(req, res, next) => 
-		ProdRequest.destroy(where{id: req.params.id})
+		ProdRequest.destroy({where{id: req.params.id}})
 		.then(() => res.json('success'))
 		.catch(next))
