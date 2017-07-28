@@ -3,18 +3,18 @@ import {
   Link,
 } from 'react-router-dom';
 
-export const Initial = (props) => {
+const Initial = (props) => {
   let match = props.match;
   return (
     <div>
       <div>
-        <Link className="thumbnail" to={`/traveler`} >
+        <Link className="thumbnail" to={`/root/traveler`} >
         Are you a traveler?
         </Link>
       </div>
 
       <div>
-        <Link className="thumbnail" to={`/shopper`} >
+        <Link className="thumbnail" to={`/root/shopper`} >
         Are you a shopper?
         </Link>
       </div>
@@ -22,6 +22,7 @@ export const Initial = (props) => {
   )
 }
 
+export default Initial
 // no need to make this connected component.. it's just links
 // import {connect} from 'react-redux'
 //
