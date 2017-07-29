@@ -17,6 +17,6 @@ module.exports = require('express').Router()
 			.catch(next))
 	.delete('/:id', 
 		(req, res, next) => 
-		ProdRequest.destroy({where{id: req.params.id}})
+		ProdRequest.destroy({where: {id: req.params.id}})
 		.then(() => res.json('success'))
 		.catch(next))
