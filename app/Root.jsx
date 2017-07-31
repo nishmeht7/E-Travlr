@@ -25,15 +25,44 @@ class Root extends React.Component {
     let match = this.props.match;
     return (
       <div>
-        <nav>
-          <div className="nav nav-tabs">
-              <span>Home | </span>
-              <span>blah | </span>
-              <span>blah</span>
-            {user ? <WhoAmI/> : <Login/>}
-          </div>
+      <nav className="navbar navbar-inverse navbar-fixed-top navbar-custom">
+            <div className="navbar-header page-scroll">
+                <button type="button" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" className="navbar-toggle">
+                    <span className="sr-only">Toggle navigation</span> Menu <i className="fa fa-bars"></i>
+                </button>
+                <a href="#me" className="navbar-brand">E-Travlr</a>
+            </div>
+           
+            <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul className="nav navbar-nav navbar-right">
+                        <li className="hidden">
+                            <a href="#page-top"></a>
+                        </li>
+                        <li className="page-scroll">
+                            <a href="#about"><span>About Us</span></a>
+                        </li>
+                        <li className="page-scroll">
+                            <a href="#portfolio">Start Shopping</a>
+                        </li>
+                        <li className="page-scroll">
+                            <a href="#connect">Start Traveling</a>
+                        </li>
+                        
+                        {user ? 
+                          <li className="page-scroll">
+                            <a href="#connect"> {user}</a>
+                        </li> 
+                          : 
+                          <li className="page-scroll">
+                            <a href="#connect">Login</a>
+                        </li>}
+                        
+                    </ul>
+                </div>
         </nav>
         <Switch>
+          <Route path={`${match.url}/login`} component={Login} />
+          <Route path={`${match.url}/WhoAmI`} component={WhoAmI} />
           <Route path={`${match.url}/traveler`} component={Traveler} />
           <Route exact path={`${match.url}/start`} component={Initial} />
           <Redirect exact from={`${match.url}`} to={`${match.url}/start`} />
@@ -48,3 +77,10 @@ class Root extends React.Component {
 
 const mapState = ({ auth }) => ({ user: auth });
 export default connect(mapState)(Root);
+
+// <div className="nav nav-tabs">
+//               <span>Home | </span>
+//               <span>blah | </span>
+//               <span>blah</span>
+//             {user ? <WhoAmI/> : <Login/>}
+//           </div>

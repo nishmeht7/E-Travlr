@@ -6,23 +6,31 @@ import {
 const Initial = (props) => {
   let match = props.match;
   return (
-    <div>
-      <div>
-        <Link className="thumbnail" to={`/root/traveler`} >
-        Are you a traveler?
-        </Link>
-      </div>
-
-      <div>
-        <Link className="thumbnail" to={`/root/shopper`} >
-        Are you a shopper?
-        </Link>
+    <div className="row-initial">
+      <div className="initial-page col-md-12">
+        <h1 className="h1-initial">Order from Anywhere, Deliveries made Everywhere</h1>
+        <form className="form-search">
+          <input type="text" className="input-medium" placeholder="Enter Product URL"/>
+          <button type="submit" className="btn btn-primary btn-cons"> START!</button>
+        </form>
       </div>
     </div>
   )
 }
 
 export default Initial
+
+
+/*      <div>
+        <Link className="thumbnail" to={`/root/shopper`} >
+        Order anything you want from around the world
+        </Link>
+      </div>*/
+//<div>
+//        <Link className="thumbnail" to={`/root/traveler`} >
+//        Are you a traveler?
+//        </Link>
+//      </div>
 // no need to make this connected component.. it's just links
 // import {connect} from 'react-redux'
 //

@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css?family=PT+Sans");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+body {
+ 
+}
+
+.navbar {
+    margin-bottom: 150px;
+    navbar
+}
+
+@media (min-width: 600px) {
+    .navbar-custom {
+        -webkit-transition: padding .3s;
+        -moz-transition: padding .3s;
+        transition: padding .3s;
+    }
+    .navbar-custom .navbar-brand {
+    font-size: 2em;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .navbar-custom.affix {
+    padding: 10px 0;
+  }
+  .navbar-custom.affix .navbar-brand {
+    font-size: 1.5em;
+  }
+    
+}
+
+@media (max-width: 767px) {
+  section {
+    padding: 75px 0;
+  }
+  section.first {
+    padding-top: 75px;
+  }
+}
+
+.navbar-custom {
+    background: #2C3E50;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700; 
+    color: white;
+}
+
+.navbar-custom .navbar-brand {
+  color: white;
+  font-family: 'PT Sans', sans-serif;
+}
+.navbar-custom .navbar-brand:hover,
+.navbar-custom .navbar-brand:focus,
+.navbar-custom .navbar-brand:active,
+.navbar-custom .navbar-brand.active {
+  color: white;
+}
+
+.navbar-custom .navbar-nav {
+  letter-spacing: 1px;
+}
+
+.navbar-custom .navbar-nav li a {
+  color: white;
+  padding-right: 25px;
+}
+.navbar-custom .navbar-nav li a:hover {
+  color: #18BC9C;
+}
+.navbar-custom .navbar-nav li a:focus,
+.navbar-custom .navbar-nav li a:active {
+  color: white;
+}
+
+.navbar-custom .navbar-toggle {
+  color: white;
+  text-transform: uppercase;
+  font-size: 10px;
+  border-color: white;
+}
+.navbar-custom .navbar-toggle:hover,
+.navbar-custom .navbar-toggle:focus {
+  background-color: #18BC9C;
+  color: white;
+  border-color: #18BC9C;
+}
+
+.row-initial {
+  background: url("https://ak9.picdn.net/shutterstock/videos/10520675/thumb/1.jpg");
+  height: 100vh;
+  background-size: cover;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.initial-page {
+  top: 30%;
+  text-align: center;
+}
+
+.form-control {
+  width: 50%;
+}
+
+.input-medium {
+  width: 50%;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding:9px;
+  border-radius: 8px;
+  border: solid blue 1px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.btn {
+  font-family: 'Open Sans', sans-serif;
+  padding: 9px;
+  border-radius: 8px;
+  width: 10%;
+}
+
+.h1-initial {
+  margin-bottom: 30px;
+  font-size: 45px;
+}
