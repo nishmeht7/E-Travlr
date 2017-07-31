@@ -39,13 +39,13 @@ class Root extends React.Component {
                             <a href="#page-top"></a>
                         </li>
                         <li className="page-scroll">
-                            <a href="#about"><span>About Us</span></a>
+                            <a href="#about"><span>How this works?</span></a>
                         </li>
                         <li className="page-scroll">
-                            <a href="#portfolio">Start Shopping</a>
+                            <a href="/root/Shopper">Start Shopping Internationally</a>
                         </li>
                         <li className="page-scroll">
-                            <a href="#connect">Start Traveling</a>
+                            <a href="/root/Traveler">Make $$ while Traveling</a>
                         </li>
                         
                         {user ? 
