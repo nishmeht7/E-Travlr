@@ -13,6 +13,7 @@ class Traveler extends React.Component {
   render(){
     let user = this.props.user;
     let match = this.props.match;
+    console.log("match.url ", match.url)
     return (
       <div>
         <Switch>
