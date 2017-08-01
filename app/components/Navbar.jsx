@@ -36,7 +36,7 @@ const Navbar = (props) => {
                       </li>
                         :
                         <li className="page-scroll">
-                          <a href="#connect">Login</a>
+                          <Link to="/root/Login">Login</Link>
                       </li>}
 
                   </ul>

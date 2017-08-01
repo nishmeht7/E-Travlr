@@ -4,7 +4,7 @@
 /*---Google-Fonts-End---*/
 
 body {
- 
+  padding-top: 60px;
 }
 
 /*---Navbar-Start---*/
@@ -31,7 +31,7 @@ body {
   .navbar-custom.affix .navbar-brand {
     font-size: 1.5em;
   }
-    
+
 }
 
 @media (max-width: 767px) {
@@ -47,7 +47,7 @@ body {
     background: #2C3E50;
     font-family: 'Open Sans', sans-serif;
     text-transform: uppercase;
-    font-weight: 700; 
+    font-weight: 700;
     color: white;
 }
 

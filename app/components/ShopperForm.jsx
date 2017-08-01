@@ -8,6 +8,8 @@ import WhoAmI from './WhoAmI'
 import NotFound from './NotFound'
 import { Initial } from './Initial'
 
+import { add_prodRequest_TC } from '../reducers/prodRequests'
+
 /* note.. getting this warning:
 
 Warning: ShopperForm is changing an uncontrolled input of type text to be
@@ -34,8 +36,11 @@ class ShopperForm extends React.Component {
     this.handleChange = this.handleChange.bind(this)
   }
 
-  handleSubmit(){
+  handleSubmit(e){
+    e.preventDefault()
     console.log('submit code here... dispatch a thunk or some shiz')
+    console.log('this.state ', this.state)
+    this.props.add_prodRequest(this.state)
   }
 
   handleChange(e){
@@ -49,6 +54,7 @@ class ShopperForm extends React.Component {
     let match = this.props.match;
     return (
       <form className="form-horizontal" onSubmit={this.handleSubmit} >
+
           <div className="form-group">
             <label className="col-sm-2 control-label">Product Name</label>
             <div className="col-sm-10">
@@ -57,7 +63,10 @@ class ShopperForm extends React.Component {
           </div>
 
           <div className="form-group">
-            :::Upload Image Placeholder:::
+            <label className="col-sm-2 control-label">Image URL</label>
+            <div className="col-sm-10">
+              <input type="text" name="image" value={this.state.image} className="form-control" placeholder="" onChange={this.handleChange} />
+            </div>
           </div>
 
           <div className="form-group">
@@ -100,4 +109,8 @@ class ShopperForm extends React.Component {
 }
 
 const mapState = ({ auth }) => ({ user: auth });
-export default connect(mapState)(ShopperForm);
+const mapDispatch = {
+  add_prodRequest: add_prodRequest_TC
+}
+
+export default connect(mapState, mapDispatch)(ShopperForm);
