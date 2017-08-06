@@ -8,7 +8,7 @@ import WhoAmI from './WhoAmI'
 import NotFound from './NotFound'
 import { Initial } from './Initial'
 
-/* note.. getting this warning:
+/* note..getting this warning:
 
 Warning: ShopperForm is changing an uncontrolled input of type text to be
 controlled. Input elements should not switch from uncontrolled to controlled
