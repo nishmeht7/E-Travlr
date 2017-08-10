@@ -26,6 +26,8 @@
 // }, (err, data) => {
 // 	console.log(err||data)
 // })
+
+//this module works with etsy, amazon, target and bestbuy!
 var scraper = require('product-scraper')
 
 scraper.init('http://www.amazon.com/gp/product/B00X4WHP5E/', function(data){
