@@ -29,6 +29,11 @@ const add_prodRequest_AC = (prodRequest) => ({
 })
 
 // THUNK CREATORS
+export const fetch_prodRequests_urlInfo = () => {
+  return axios.post('/api/prodRequests/scraper')
+    .then(res => res.data)
+    .catch(console.error)
+}
 
 export const fetch_prodRequests_TC = () => dispatch => {
   return axios.get('/api/prodRequests')
