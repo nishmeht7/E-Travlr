@@ -25,6 +25,7 @@ class Root extends React.Component {
     return (
       <div>
         <Navbar />
+        <div className = 'top10'>
         <Switch>
           <Route path={`${match.url}/login`} component={Login} />
           <Route path={`${match.url}/WhoAmI`} component={WhoAmI} />
@@ -35,6 +36,7 @@ class Root extends React.Component {
           <Route path={`${match.url}/shopper`} component={Shopper} />
           <Route component={NotFound} />
         </Switch>
+        </div>
       </div>
     )
   }

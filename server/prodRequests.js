@@ -1,6 +1,8 @@
 const db = require('APP/db')
 const ProdRequest = db.model('prodRequests')
 
+console.dir(ProdRequest.create)
+
 module.exports = require('express').Router()
 	.get('/',
 		(req, res, next) =>
@@ -11,10 +13,12 @@ module.exports = require('express').Router()
 			})
 			.catch(next))
 	.post('/',
-		(req, res, next) =>
-			ProdRequest.Create(req.body)
+		(req, res, next) =>{
+			console.log('req.body ', req.body)
+			ProdRequest.create(req.body)
 			.then(singleRequest => res.status(201).json(singleRequest))
-			.catch(next))
+			.catch(next)
+		})
 	.delete('/:id',
 		(req, res, next) =>
 		ProdRequest.destroy({where: {id: req.params.id}})
