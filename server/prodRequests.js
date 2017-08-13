@@ -24,7 +24,10 @@ module.exports = require('express').Router()
 		(req, res, next) => {
 			console.log('the url is',req.body.url)
 			ScraperFunc(req.body.url)
-			.then(urlInfo => res.status(201).json(urlInfo))
+			.then(urlInfo => {
+				console.log('the urlinfo is', urlInfo)
+				res.status(201).json(urlInfo)
+			})
 			.catch(next)
 		})
 	.delete('/:id',
