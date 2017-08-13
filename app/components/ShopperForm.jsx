@@ -25,8 +25,8 @@ class ShopperForm extends React.Component {
   constructor(){
     super()
     this.state = {
-      productName: '',
-      image: '',// not sure how to do this.. figure it out
+      name: '',
+      prodImageURL: '',// not sure how to do this.. figure it out
       url: '',
       description: '',
       price: '',
@@ -58,14 +58,14 @@ class ShopperForm extends React.Component {
           <div className="form-group">
             <label className="col-sm-2 control-label">Product Name</label>
             <div className="col-sm-10">
-              <input type="text" name="productName" value={this.state.productName} className="form-control" placeholder="" onChange={this.handleChange} />
+              <input type="text" name="name" value={this.state.name} className="form-control" placeholder="" onChange={this.handleChange} />
             </div>
           </div>
 
           <div className="form-group">
             <label className="col-sm-2 control-label">Image URL</label>
             <div className="col-sm-10">
-              <input type="text" name="image" value={this.state.image} className="form-control" placeholder="" onChange={this.handleChange} />
+              <input type="text" name="prodImageURL" value={this.state.prodImageURL} className="form-control" placeholder="" onChange={this.handleChange} />
             </div>
           </div>
 

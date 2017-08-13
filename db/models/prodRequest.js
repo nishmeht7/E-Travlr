@@ -3,33 +3,53 @@ const {STRING, TEXT, FLOAT, DATEONLY, ENUM} = require('sequelize')
 module.exports = db => db.define('prodRequests', {
   name: {
     type: STRING,
-    notEmpty: true,
+    validate: {
+      notEmpty: true,
+    }
   },
   prodImageURL: {
     type: TEXT,
-    notEmpty: true,
-    isURL: true,
+    validate: {
+      isURL: true,
+      notEmpty: true,
+    }
   },
   url: {
     type: TEXT,
-    notEmpty: true, 
-    isURL: true, 
+    validate: {
+      isURL: true,
+      notEmpty: true,
+    }
+  },
+  description: {
+    type: TEXT,
+    validate: {
+      notEmpty: true,
+    }
   },
   price: {
     type: FLOAT,
-    notEmpty: true,
+    validate: {
+      notEmpty: true,
+    }
   },
   reward: {
     type: FLOAT,
-    notEmpty: true,
+    validate: {
+      notEmpty: true,
+    }
   },
   prodCity: {
     type: STRING,
-    notEmpty: true,
+    // validate: {
+    //   notEmpty: true,
+    // }
   },
   userCity: {
     type: STRING,
-    notEmpty: true,
+    // validate: {
+    //   notEmpty: true,
+    // }
   },
   expiryDate: {
     type: DATEONLY,
@@ -37,5 +57,5 @@ module.exports = db => db.define('prodRequests', {
   requestStatus: {
     type: ENUM,
     values: ['active', 'pending', 'expired', 'complete'],
-  }
+  },
 })
