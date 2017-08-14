@@ -30,8 +30,26 @@
 //this module works with etsy, amazon, target and bestbuy!
 var scraper = require('product-scraper')
 
-scraper.init('http://www.amazon.com/gp/product/B00X4WHP5E/', function(data){
-	let arr = [];
-	arr.push(data.title, data.image, data.price)
-    console.log('the data is', arr);
-});
+// const scraperFunc = function(URL) {
+// 	return scraper.init(URL, function(data){
+// 	let arr = [];
+// 	return arr.push(data.title, data.image, data.price)
+//     //console.log('the data is', arr);
+// });
+// }
+
+const scraperFunc = function (URL){
+	return new Promise(function(resolve, reject){
+
+		scraper.init(URL, function(data){
+		let obj = {name: data.title, prodImageUrl: data.image, price: data.price, url: data.url};
+		console.log('the obj is',obj)
+		resolve(obj)
+
+		})
+	})
+}
+
+module.exports = scraperFunc; 
+
+

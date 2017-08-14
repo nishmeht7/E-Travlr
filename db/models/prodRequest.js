@@ -28,7 +28,7 @@ module.exports = db => db.define('prodRequests', {
     }
   },
   price: {
-    type: FLOAT,
+    type: STRING,
     validate: {
       notEmpty: true,
     }

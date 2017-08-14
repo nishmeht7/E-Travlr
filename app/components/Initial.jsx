@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {
   Link,
 } from 'react-router-dom';
+import { fetch_prodRequests_urlInfo } from '../reducers/prodRequests'
 
 class Initial extends React.Component {
 //const Initial = (props) => {
@@ -14,8 +15,19 @@ class Initial extends React.Component {
     this.handleChange = this.handleChange.bind(this)
   }
 
-  handleSubmit() {
-    console.log('prod url is submitted')
+  handleSubmit(e) {
+    e.preventDefault()
+    console.log('prod url is submitted',this.state.prodUrl)
+    fetch_prodRequests_urlInfo(this.state.prodUrl)
+      .then(prodInfo => {
+        console.log('the prodInfo in initial', prodInfo)
+        console.log('this props', this.props)
+        this.props.history.push({
+          pathname: '/root/Shopper/form', 
+          state: prodInfo
+        })
+      })
+      .catch(console.error)
   }
 
   handleChange(e){
@@ -25,6 +37,7 @@ class Initial extends React.Component {
   }
 
   render() {
+  // console.log('this props', this.props)
   let match = this.props.match;
   return (
     <div className="row-initial">
