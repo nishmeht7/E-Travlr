@@ -36,6 +36,7 @@ class ShopperForm extends React.Component {
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
+    this.getImage = this.getImage.bind(this)
   }
 
   handleSubmit(e){
@@ -51,8 +52,20 @@ class ShopperForm extends React.Component {
     this.setState({[name]: value})
   }
 
+  getImage() {
+    if(this.props.prodImageURL) {
+      console.log('hitting get image')
+      var val = document.getElementById('imagename').value,
+          src = this.props.prodImageURL,
+          img = document.createElement('img');
+
+      img.src = src;
+      console.log('the image is', img)
+      document.body.appendChild(img);
+    }
+  }
+
   render(){
-    console.log('the image', document.images[0])
     let user = this.props.user;
     let match = this.props.match;
     console.log('the shopperform props is', this.props)
@@ -69,7 +82,8 @@ class ShopperForm extends React.Component {
           <div className="form-group">
             <label className="col-sm-2 control-label">Image URL</label>
             <div className="col-sm-10">
-              <input id="imageName" type="text" name="prodImageURL" value={this.state.prodImageURL} className="form-control" placeholder="" onChange={this.handleChange} />
+              <input id="imageName" type="text" name="prodImageURL" value={this.state.prodImageURL} className="form-control" placeholder="" onChange={this.handleChange} onLoad={this.getImage} /> 
+              {this.state.prodImageURL ? <img src={this.state.prodImageURL} /> : <h1>no image</h1> }
             </div>
           </div>
 
