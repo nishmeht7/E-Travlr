@@ -42,7 +42,12 @@ const scraperFunc = function (URL){
 	return new Promise(function(resolve, reject){
 
 		scraper.init(URL, function(data){
+			console.log('the data image is', data.images)
 		let obj = {name: data.title, prodImageUrl: data.image, price: data.price, url: data.url};
+		if (data.images) {
+			obj.prodImageUrl = data.images
+		}
+		console.log('the prodimageurl is ****', obj.prodImageUrl)
 		console.log('the obj is',obj)
 		resolve(obj)
 

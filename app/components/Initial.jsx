@@ -17,7 +17,6 @@ class Initial extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    console.log('prod url is submitted',this.state.prodUrl)
     fetch_prodRequests_urlInfo(this.state.prodUrl)
       .then(prodInfo => {
         console.log('the prodInfo in initial', prodInfo)
