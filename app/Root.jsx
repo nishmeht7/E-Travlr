@@ -8,6 +8,7 @@ import NotFound from './components/NotFound'
 import Initial from './components/Initial'
 import Traveler from './components/Traveler'
 import Shopper from './components/Shopper'
+import ShopperForm from './components/ShopperForm'
 import Navbar from './components/Navbar'
 
 console.log(Initial)
@@ -33,7 +34,7 @@ class Root extends React.Component {
           <Route exact path={`${match.url}/start`} component={Initial} />
           <Redirect exact from={`${match.url}`} to={`${match.url}/start`} />
 
-          <Route path={`${match.url}/shopper`} component={Shopper} />
+          <Route path={`${match.url}/shopper`} component={ShopperForm} />
           <Route component={NotFound} />
         </Switch>
         </div>

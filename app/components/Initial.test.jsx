@@ -28,5 +28,11 @@ describe('<Initial />', () => {
 		expect(submit).to.have.length(1)
 	})
 
+	describe('When submitted', () => {
+		const root = shallow()
+	})
+	
+
 })
+
 

@@ -5,9 +5,9 @@ import {
 import { fetch_prodRequests_urlInfo } from '../reducers/prodRequests'
 
 class Initial extends React.Component {
-//const Initial = (props) => {
   constructor(){
     super()
+    console.log('this in super is',this)
     this.state = {
       prodUrl: ""
     }
@@ -55,22 +55,3 @@ class Initial extends React.Component {
 }
 
 export default Initial
-
-
-/*      <div>
-        <Link className="thumbnail" to={`/root/shopper`} >
-        Order anything you want from around the world
-        </Link>
-      </div>*/
-//<div>
-//        <Link className="thumbnail" to={`/root/traveler`} >
-//        Are you a traveler?
-//        </Link>
-//      </div>
-// no need to make this connected component.. it's just links
-// import {connect} from 'react-redux'
-//
-// export default connect(
-//   state => ({}),
-//   {login},
-// )(Login)
