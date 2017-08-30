@@ -7,7 +7,7 @@ import {connect} from 'react-redux'
 const Navbar = (props) => {
   const user = props.user
   return (
-    <nav className="navbar navbar-inverse navbar-fixed-top navbar-custom">
+    <nav name="navbar" className="navbar navbar-inverse navbar-fixed-top navbar-custom">
           <div className="navbar-header page-scroll">
               <button type="button" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" className="navbar-toggle">
                   <span className="sr-only">Toggle navigation</span> Menu <i className="fa fa-bars"></i>

@@ -12,6 +12,7 @@ import ShopperForm from './ShopperForm'
 class Shopper extends React.Component {
 
   render(){
+    console.log('the props in shopper are',)
     let user = this.props.user;
     let match = this.props.match;
     return (

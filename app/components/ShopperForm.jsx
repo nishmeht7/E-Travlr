@@ -1,7 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Route, Switch, Redirect} from 'react-router-dom'
-
 import Jokes from './Jokes'
 import Login from './Login'
 import WhoAmI from './WhoAmI'
@@ -10,15 +9,6 @@ import { Initial } from './Initial'
 
 import { add_prodRequest_TC } from '../reducers/prodRequests'
 
-/* note.. getting this warning:
-
-Warning: ShopperForm is changing an uncontrolled input of type text to be
-controlled. Input elements should not switch from uncontrolled to controlled
-(or vice versa). Decide between using a controlled or uncontrolled input
-element for the lifetime of the component.
-More info: https://fb.me/react-controlled-components
-
-*/
 
 
 class ShopperForm extends React.Component {
@@ -27,11 +17,11 @@ class ShopperForm extends React.Component {
     // console.log('the new info in shopper form is', this.props.history.location.state)
     let shopperInfo = this.props.history.location.state
     this.state = {
-      name: shopperInfo.name || "",
-      prodImageURL: shopperInfo.prodImageUrl || "",// not sure how to do this.. figure it out
-      url: shopperInfo.url || "",
+      name: shopperInfo ? shopperInfo.name : "",
+      prodImageURL: shopperInfo ? shopperInfo.prodImageUrl : "",
+      url: shopperInfo ? shopperInfo.url : "",
       description: '',
-      price: shopperInfo.price || "",
+      price: shopperInfo ? shopperInfo.price : "",
       reward: '',
     }
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -41,7 +31,6 @@ class ShopperForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault()
-    console.log('submit code here... dispatch a thunk or some shiz')
     console.log('this.state ', this.state)
     this.props.add_prodRequest(this.state)
   }
@@ -76,7 +65,7 @@ class ShopperForm extends React.Component {
             <label className="col-sm-2 control-label">Image URL</label>
             <div className="col-sm-10">
               <input id="imageName" type="text" name="prodImageURL" value={this.state.prodImageURL} className="form-control" placeholder="" onChange={this.handleChange} onLoad={this.getImage} /> 
-              {this.state.prodImageURL ? this.state.prodImageURL.forEach(elem => <h1>elem.src</h1> ): <h1>no image</h1> }
+              {this.state.prodImageURL ? <img className="shopperFrom-img" src={this.state.prodImageURL} /> : <h1>no image</h1> }
             </div>
           </div>
 
@@ -110,7 +99,7 @@ class ShopperForm extends React.Component {
 
           <div className="form-group">
             <div className="col-sm-offset-2 col-sm-10">
-              <button type="submit" className="btn btn-primary">Submit</button>
+              <button type="submit" className="btn btn-primary" onSubmit={this.handleSubmit}>Submit</button>
             </div>
           </div>
 
