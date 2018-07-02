@@ -25,7 +25,9 @@
     "deploy-heroku": "bin/deploy-heroku.sh",
     "lint": "esw . --ignore-path .gitignore --ext '.js,.jsx'",
     "lint-watch": "npm run lint -- -w",
-    "prepush": "npm run test"
+    "prepush": "npm run test",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -75,7 +77,8 @@
     "redux-thunk": "^2.1.0",
     "sequelize": "^3.24.6",
     "sinon": "^1.17.6",
-    "sinon-chai": "^2.8.0"
+    "sinon-chai": "^2.8.0",
+    "snyk": "^1.88.0"
   },
   "devDependencies": {
     "babel": "^6.5.2",
@@ -103,5 +106,6 @@
     "volleyball": "^1.4.1",
     "webpack": "^2.2.1",
     "webpack-livereload-plugin": "^0.10.0"
-  }
+  },
+  "snyk": true
 }
